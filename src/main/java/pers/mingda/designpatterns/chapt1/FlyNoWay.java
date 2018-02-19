@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.pers.minda.designpatterns.chapt1;
+package pers.mingda.designpatterns.chapt1;
 
 public class FlyNoWay implements FlyBehavior {
 
