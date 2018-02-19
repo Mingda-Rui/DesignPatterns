@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DesignPatterns.iml" filepath="$PROJECT_DIR$/DesignPatterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mingda-designpatterns.iml" filepath="$PROJECT_DIR$/mingda-designpatterns.iml" />
     </modules>
   </component>
 </project>
