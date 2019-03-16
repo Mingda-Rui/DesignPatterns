@@ -10,7 +10,7 @@ public class InputTest {
     public static void main(String[] args) throws IOException {
         int c;
         try {
-            InputStream in = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("test.txt")));
+            InputStream in = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("src/main/java/pers/mingda/designpatterns/chapt3/test.txt")));
 
             while((c = in.read()) >= 0) {
                 System.out.print((char)c);
@@ -20,9 +20,9 @@ public class InputTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    // public static void main(String[] args) {
-    //     System.out.println("workdin directory = " + System.getProperty("user.dir"));
-    // }
+//     public static void main(String[] args) {
+//         System.out.println("workdin directory = " + System.getProperty("user.dir"));
+//     }
 }
