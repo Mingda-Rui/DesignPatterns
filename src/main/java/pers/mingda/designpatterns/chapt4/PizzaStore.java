@@ -1,25 +1,17 @@
 package pers.mingda.designpatterns.chapt4;
 
-public class PizzaStore {
-    // Now we give PizzaStore a reference
-    // to a SimplePizzaFactory.
-    SimplePizzaFactory factory;
-
-    // PizzaStore gets the factory passed to
-    // it in the constructor.
-    public PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
-    }
+// PizzaStore is now abstract (see why below)
+public abstract class PizzaStore {
 
     public Pizza orderPizza(
         String type /* We're now passing in the type of pizza to orderPizza */) {
 
         Pizza pizza;
 
-        // And the orderPizza() method uses the
-        // factory to create its pizzas by simply
-        // passing on the type of the order.
-        pizza = factory.createPizza(type);
+        // Now createPizza is back to being a 
+        // call to a method in the PizzaStore
+        // rather than on a factory object.
+        pizza = createPizza(type);
 
         // Each Pizza subtype (CheesPizza,
         // VeggiePizza, etc.) knows how to 
@@ -31,6 +23,10 @@ public class PizzaStore {
         return pizza;
     }
 
-// other methods here
+    // Now we've moved our factory
+    // object to this method.
+    abstract Pizza createPizza(String type);
+    // Our "factory method" is now
+    // abstract in PizzaStore
 
 }
