@@ -10,7 +10,7 @@ public abstract class Pizza {
     // type of sauce, and a set of toppings.    
     String name;
     String dough;
-    String sauece;
+    String sauce;
     ArrayList toppings = new ArrayList();
 
     // The abstract class provides 
