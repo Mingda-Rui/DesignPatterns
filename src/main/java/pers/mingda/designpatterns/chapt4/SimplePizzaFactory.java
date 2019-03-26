@@ -20,8 +20,13 @@ public class SimplePizzaFactory {
         } else if (type.equals("clam")) {
             pizza = new ClamPizza();
         } else if (type.equals("veggie")) {
-            pizza = VeggiePizza();
+            pizza = new VeggiePizza();
         }
         return pizza;
     }
 }
+
+class CheesePizza extends Pizza {}
+class PepperoniPizza extends Pizza {}
+class ClamPizza extends Pizza {}
+class VeggiePizza extends Pizza {}
