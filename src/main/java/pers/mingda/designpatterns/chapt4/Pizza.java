@@ -2,32 +2,22 @@ package pers.mingda.designpatterns.chapt4;
 
 import java.util.ArrayList;
 
-// We'll start with an abstract 
-// Pizza class and all the concrete
-// pizzas will derive from this.
 public abstract class Pizza {
-    // Each Pizza has a name, a type of dough, a
-    // type of sauce, and a set of toppings.    
+    // Each Pizza holds a set of ingredients
+    // that are used in its preparation.   
     String name;
-    String dough;
-    String sauce;
-    ArrayList toppings = new ArrayList();
-
-    // The abstract class provides 
-    // some basic defaults for baking,
-    // cutting and boxing.    
-    void prepare() {
-        // Preparation follows a 
-        // number of steps in a 
-        // particular sequence.     
-        System.out.println("Preparing " + name);    
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppings: ");
-        for (int i = 0; i < toppings.size(); i++) {
-            System.out.println("   " + toppings.get(i) );
-        }
-    }
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clam;
+    
+    // We' ve now made the prepare method abstract
+    // This is where we are going to collect the
+    // ingredients needed for the pizza, which of 
+    // course will come from the ingredient factory
+    abstract void prepare();
     
     void bake() {
         System.out.println("Bake for 25 minutes at 350");    
@@ -41,7 +31,15 @@ public abstract class Pizza {
         System.out.println("Place pizza in official PizzaStore box");
     }    
 
+    void setName(String name) {
+        this.name = name;    
+    }
+
     public String getName() {
         return name;    
+    }
+
+    public String toString() {
+        // code to print pizza here 
     }
 }
