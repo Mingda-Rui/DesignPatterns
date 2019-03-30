@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.factory;
 
 // The NY ingredient factory implements 
 // the interface for all ingredient factories

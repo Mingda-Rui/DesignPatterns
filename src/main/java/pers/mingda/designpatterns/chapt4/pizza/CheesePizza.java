@@ -1,4 +1,6 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.pizza;
+
+import pers.mingda.designpatterns.chapt4.factory.*;
 
 public class CheesePizza extends Pizza {
     PizzaIngredientFactory ingredientFactory; 

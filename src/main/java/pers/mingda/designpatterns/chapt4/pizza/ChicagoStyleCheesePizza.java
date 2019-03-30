@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.pizza;
 
 public class ChicagoStyleCheesePizza extends Pizza {
     // The Chicago Pizza uses plum
@@ -19,5 +19,10 @@ public class ChicagoStyleCheesePizza extends Pizza {
     // method so that the pieces are cut into squares.    
     void cut() {
         System.out.println("Cutting the pizza into square slices");
-    }    
+    }
+
+    @Override
+    void prepare() {
+
+    }
 }

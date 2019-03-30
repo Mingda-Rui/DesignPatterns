@@ -1,4 +1,6 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.pizzastore;
+
+import pers.mingda.designpatterns.chapt4.pizza.*;
 
 public class CaliforniaPizzaStore extends PizzaStore {
     protected Pizza createPizza(String item) {

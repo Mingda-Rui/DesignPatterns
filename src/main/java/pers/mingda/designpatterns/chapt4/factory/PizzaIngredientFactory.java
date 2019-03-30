@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.factory;
 
 public interface PizzaIngredientFactory {
     

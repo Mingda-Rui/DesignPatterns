@@ -1,4 +1,6 @@
-package pers.mingda.designpatterns.chapt4;
+package pers.mingda.designpatterns.chapt4.pizzastore;
+
+import pers.mingda.designpatterns.chapt4.pizza.*;
 
 // PizzaStore is now abstract (see why below)
 public abstract class PizzaStore {
