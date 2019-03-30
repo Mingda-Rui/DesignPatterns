@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt4.pizza;
 
+import pers.mingda.designpatterns.chapt4.pizza.ingredient.*;
 import java.util.ArrayList;
 
 public abstract class Pizza {

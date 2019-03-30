@@ -1,5 +1,7 @@
 package pers.mingda.designpatterns.chapt4.factory;
 
+import pers.mingda.designpatterns.chapt4.pizza.ingredient.*;
+
 // The NY ingredient factory implements 
 // the interface for all ingredient factories
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
