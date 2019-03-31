@@ -4,12 +4,21 @@ public class ChocolateBoiler {
     private boolean empty;
     private boolean boiled;
 
+    private static ChocolateBoiler uniqueInstance;
+
     // This code is only started
     // when the boiler is empty!
-    public ChocolateBoiler() {
+    private ChocolateBoiler() {
         empty = true;
         boiled = false;    
     }    
+
+    public static ChocolateBoiler getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new ChocolateBoiler();
+        }
+        return uniqueInstance;
+    }
 
     // To fill the boiler it must be
     // empty, and, once it's full, we set 
