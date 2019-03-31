@@ -10,13 +10,13 @@ public class Singleton {
 
     private Singleton() {}
 
-    // Check for an instance and 
-    // if there isn't one, enter a 
-    // synchronized block.
     public static synchronized Singleton getInstance() {
-        // Note we only synchronize
-        // the first time through!
+        // Check for an instance and 
+        // if there isn't one, enter a 
+        // synchronized block.
         if (uniqueInstance == null) {
+            // Note we only synchronize
+            // the first time through!
             synchronized (Singleton.class) {
                 if (uniqueInstance == null) {
                     // Once in the block, check again and
