@@ -1,6 +1,6 @@
 package pers.mingda.designpatterns.chapt6;
 
-import pers.mingda.designpatterns.chapt6.applicant.Light;
+import pers.mingda.designpatterns.chapt6.applicant.*;
 
 // This is our Client in Command Pattern-speak
 public class RemoteControlTest {
@@ -16,9 +16,13 @@ public class RemoteControlTest {
         // Receiver of the request.
         Light light = new Light();
 
+        GarageDoor GarageDoor = new GarageDoor();
+
         // Here, create a command and 
         // pass the Receiver to it.
         LightOnCommand lightOn = new LightOnCommand(light);
+
+        GarageDoorOpenCommand garageOpen = new GarageDoorOpenCommand(garageDoor);
 
         // Here, pass the command
         // to the Invoker.
@@ -26,6 +30,9 @@ public class RemoteControlTest {
 
         // And then we simulate the 
         // button being pressed
+        remote.buttonWasPressed();
+
+        remote.setCommand(garageOpen);
         remote.buttonWasPressed();
     }
 }
