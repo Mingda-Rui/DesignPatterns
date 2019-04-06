@@ -16,7 +16,7 @@ public class RemoteControlTest {
         // Receiver of the request.
         Light light = new Light();
 
-        GarageDoor GarageDoor = new GarageDoor();
+        GarageDoor garageDoor = new GarageDoor();
 
         // Here, create a command and 
         // pass the Receiver to it.
