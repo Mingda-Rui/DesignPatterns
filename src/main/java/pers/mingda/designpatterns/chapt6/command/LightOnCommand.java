@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt6;
+package pers.mingda.designpatterns.chapt6.command;
 
 
 import pers.mingda.designpatterns.chapt6.applicant.Light;

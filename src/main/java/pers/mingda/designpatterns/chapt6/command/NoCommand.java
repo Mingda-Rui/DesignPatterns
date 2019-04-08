@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt6;
+package pers.mingda.designpatterns.chapt6.command;
 
 public class NoCommand implements Command {
     

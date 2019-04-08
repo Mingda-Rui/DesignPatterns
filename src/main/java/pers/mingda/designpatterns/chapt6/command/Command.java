@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt6;
+package pers.mingda.designpatterns.chapt6.command;
 
 public interface Command {
     // Simple. All we need is one method called execute().
