@@ -1,4 +1,7 @@
-package pers.mingda.designpatterns.chapt6;
+package pers.mingda.designpatterns.chapt6.control;
+
+import pers.mingda.designpatterns.chapt6.command.Command;
+import pers.mingda.designpatterns.chapt6.command.NoCommand;
 
 public class RemoteControl {
     // This time around the remote is going to 

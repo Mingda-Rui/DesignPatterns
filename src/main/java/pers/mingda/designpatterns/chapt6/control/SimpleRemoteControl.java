@@ -1,4 +1,6 @@
-package pers.mingda.designpatterns.chapt6;
+package pers.mingda.designpatterns.chapt6.control;
+
+import pers.mingda.designpatterns.chapt6.command.Command;
 
 public class SimpleRemoteControl {
     // We have one slot to hold our command,
