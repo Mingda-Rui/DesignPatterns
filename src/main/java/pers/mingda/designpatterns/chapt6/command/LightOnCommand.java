@@ -28,8 +28,8 @@ public class LightOnCommand implements Command {
     }
 
     // And here, undo() turns
-    // the light back on!
+    // the light back off!
     public void undo() {
-        light.on();
+        light.off();
     }
 }
