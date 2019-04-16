@@ -1,6 +1,6 @@
 package pers.mingda.designpatterns.chapt7.adapter;
 
-import pers.mingda.designpatterns.chapt1.Duck;
+import pers.mingda.designpatterns.chapt7.Duck;
 import pers.mingda.designpatterns.chapt7.Turkey;
 
 // First, you need to timplement the interface
