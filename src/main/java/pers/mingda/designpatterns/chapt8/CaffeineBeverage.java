@@ -14,7 +14,14 @@ public abstract class CaffeineBeverage {
         boilWater();
         brew();
         pourInCup();
-        addCondiments();
+        // We've added a little conditional statement
+        // that bases its success on a concrete
+        // method, customerWantsCondiemnts(). If 
+        // the customer WANTS condiments, only
+        // then do we call addCondiments().
+        if (customerWantsCondiments()) {
+            addCondiments();
+        }
     }
 
     // Because Coffee and Tea handle these methods
@@ -36,5 +43,15 @@ public abstract class CaffeineBeverage {
         System.out.println("Pouring into cup");
     }
 
+    // Here we've defined a method
+    // with a (mostly) empty default
+    // implementation. This method just
+    // returns true and does nothing else.
+    boolean customerWantsCondiments() {
+        // This is a hook because the 
+        // subclass can override this 
+        // method, but doesn't hava to.
+        return true;
+    }
 
 }
