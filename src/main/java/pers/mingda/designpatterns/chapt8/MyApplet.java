@@ -1,8 +1,10 @@
 package pers.mingda.designpatterns.chapt8;
 
+import java.applet.Applet;
 import java.awt.Graphics;
 
 public class MyApplet extends Applet {
+    private static final long serialVersionUID = 1L;
     String message;
 
     // The init hook allows the applet to do whatever
@@ -38,6 +40,4 @@ public class MyApplet extends Applet {
         g.drawString(message, 5, 15);
     }
 
-    // Place holder
-    private void repaint() {}
 }
