@@ -30,4 +30,8 @@ public class MyFrame extends JFrame {
         String msg = "I rule!!";
         graphics.drawString(msg, 100, 100);
     }
+
+    public static void main(String[] args) {
+        MyFrame myFrame = new MyFrame("Head First Design Patterns");
+    }
 }
