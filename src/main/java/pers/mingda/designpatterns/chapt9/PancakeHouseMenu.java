@@ -1,15 +1,14 @@
 package pers.mingda.designpatterns.chapt9;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PancakeHouseMenu {
-    ArrayList menuItems;
+    ArrayList<MenuItem> menuItems;
 
     // Lou's using an ArrayList to store
     // his menu items
     public PancakeHouseMenu() {
-        menuItems = new ArrayList();
+        menuItems = new ArrayList<MenuItem>();
     
         // Each menu item is added to the
         // ArrayList here, in the constructor
@@ -45,9 +44,13 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public ArrayList getMenuItems() {
-        // The getMenuItems() method returns the list of memu items
-        return menuItems;
+    // public ArrayList<MenuItem> getMenuItems() {
+    //     // The getMenuItems() method returns the list of memu items
+    //     return menuItems;
+    // }
+
+    public Iterator createIterator(ArrayList<MenuItem> menuItems) {
+        return new PancakeHouseMenuIterator(menuItems);
     }
 
     // other menu methods here
