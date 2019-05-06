@@ -1,5 +1,7 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
+
 // And here's Mel's implementation of the Diner menu
 public class DinerMenu {
     static final int MAX_ITEMS = 6;
@@ -52,7 +54,7 @@ public class DinerMenu {
     // It creates a DinerMenuIterator
     // from the menuItems array and
     // returns it to the client.
-    public Iterator createIterator() {
+    public Iterator<MenuItem> reateIterator() {
         return new DinerMenuIterator(menuItems);
     }
     // We're returning the Iterator interface. The client
