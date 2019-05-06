@@ -1,26 +1,24 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Iterator;
 
-// CafeMenu doesn't implement our new Menu
-// interface, but this is easily fixed.
-public class CafeMenu {
+// CafeMenu implements the Menu
+// interface, so the Waitress can use
+// it just like the other two Menus.
+public class CafeMenu implements Menu {
     // The Cafe is storing their menu items in a Hashtable.
     // Does that support Iterator? We'l see shortly...
-    Hashtable<String, MenuItem> menuItems = new Hashtable<>();
+    HashMap<String, MenuItem> menuItems = new HashMap<>();
 
     public CafeMenu() {
         // Like the other Menus, the menu items are
         // initialized in the constructor.
-        addItem("Veggie Burger and Air Fries", 
-            "Veggie burger on a whole wheat bun, lettuce, tomato, and fries",
-            true, 3.99);
-        addItem("Soup of the day",
-            "A cup of the soup of the day, with a side salad",
-            false, 3.69);
-        addItem("Burrito",
-            "A large burrito, with whole pinto beans, salsa, guacamole",
-            true, 4.29);
+        addItem("Veggie Burger and Air Fries", "Veggie burger on a whole wheat bun, lettuce, tomato, and fries", true,
+                3.99);
+        addItem("Soup of the day", "A cup of the soup of the day, with a side salad", false, 3.69);
+        addItem("Burrito", "A large burrito, with whole pinto beans, salsa, guacamole", true, 4.29);
     }
 
     // Here's where we create a new MenuItem
@@ -31,8 +29,17 @@ public class CafeMenu {
         menuItems.put(menuItem.getName(), menuItem);
     }
 
-    // We're not going to need this anymore.
-    public Hashtable<String, MenuItem> getItems() {
-        return menuItems;
+    // Just like before, we can get rid of getItems() so we don't
+    // expose the implementation of menuItems to the Waitress.
+    // public HashMap<String, MenuItem> getItems() {
+    //     return menuItems;
+    // }
+
+    // And here's where we implement the createIterator()
+    // method. Notice that we're not getting an Iterator
+    // for the whole HashMap, just for the values.
+    @Override
+    public Iterator<MenuItem> createIterator() {
+        return menuItems.values().iterator();
     }
 }
