@@ -1,8 +1,10 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
+
 // We implement the 
 // Iterator interface.
-public class DinerMenuIterator implements Iterator {
+public class DinerMenuIterator implements Iterator<MenuItem> {
     // position maintains the 
     // current position of the 
     // iteration over the array.
@@ -19,7 +21,7 @@ public class DinerMenuIterator implements Iterator {
     // The next() method returns the
     // next item in the array and 
     // increments the position.
-    public Object next() {
+    public MenuItem next() {
         MenuItem menuItem = items[position];
         position = position + 1;
         return menuItem;
@@ -36,6 +38,22 @@ public class DinerMenuIterator implements Iterator {
             return false;
         } else {
             return true;
+        }
+    }
+
+    // We need to implement remove().
+    // Here, because the chef us using a fixed
+    // sized Array, we just shift all the
+    // elements up one when remove() is called.
+    public void remove() {
+        if (position <= 0) {
+            throw new IllegalStateException("You can't remove an item until you've done at least one next()");
+        }
+        if (items[position-1] != null) {
+            for (int i = position-1; i < (items.length-1); i++) {
+                items[i] = items[i+1];
+            }
+            items[items.length-1] = null;
         }
     }
 }
