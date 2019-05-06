@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
 import java.util.ArrayList;
 
 public class PancakeHouseMenu {
@@ -49,8 +50,9 @@ public class PancakeHouseMenu {
     //     return menuItems;
     // }
 
-    public Iterator createIterator() {
-        return new PancakeHouseMenuIterator(menuItems);
+    public Iterator<MenuItem> createIterator() {
+        // return new PancakeHouseMenuIterator(menuItems);
+        return menuItems.iterator();
     }
 
     // other menu methods here
