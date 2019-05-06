@@ -1,12 +1,14 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
+
 public class Waitress {
-    PancakeHouseMenu pancakeHouseMenu;
-    DinerMenu dinerMenu;
+    Menu pancakeHouseMenu;
+    Menu dinerMenu;
 
     // In the constructor the Waitres
     // takes the two menus.
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
     }
@@ -14,8 +16,8 @@ public class Waitress {
     // The printMenu() method now creates two
     // iterators, one for each menu.
     public void printMenu() {
-        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator dinerIterator = dinerMenu.createIterator();
+        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
         // And then calls the
         // overloaded printMenu()
         // with each iterator.
