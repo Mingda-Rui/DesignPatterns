@@ -3,7 +3,7 @@ package pers.mingda.designpatterns.chapt9;
 import java.util.Iterator;
 
 // And here's Mel's implementation of the Diner menu
-public class DinerMenu {
+public class DinerMenu implements Menu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     // Mel takes a different approach; he's using an Array so he

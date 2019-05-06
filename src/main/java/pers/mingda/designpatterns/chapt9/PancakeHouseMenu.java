@@ -3,7 +3,7 @@ package pers.mingda.designpatterns.chapt9;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
     ArrayList<MenuItem> menuItems;
 
     // Lou's using an ArrayList to store
