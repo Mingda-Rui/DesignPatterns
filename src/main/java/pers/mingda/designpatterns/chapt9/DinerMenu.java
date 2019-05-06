@@ -54,7 +54,7 @@ public class DinerMenu {
     // It creates a DinerMenuIterator
     // from the menuItems array and
     // returns it to the client.
-    public Iterator<MenuItem> reateIterator() {
+    public Iterator<MenuItem> createIterator() {
         return new DinerMenuIterator(menuItems);
     }
     // We're returning the Iterator interface. The client
