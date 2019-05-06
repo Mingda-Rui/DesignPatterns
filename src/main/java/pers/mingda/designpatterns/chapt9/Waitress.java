@@ -6,10 +6,11 @@ public class Waitress {
     Menu pancakeHouseMenu;
     Menu dinerMenu;
     Menu cafeMenu;
+    
 
     // In the constructor the Waitres
     // takes the two menus.
-    public Waitress(Menu pancakeHouseMenu, Menu dinerMenum, Menu cafeMenu) {
+    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
         this.cafeMenu = cafeMenu;
