@@ -28,7 +28,27 @@ public class SimplePizzaFactory {
     }
 }
 
-class CheesePizza extends Pizza {}
-class PepperoniPizza extends Pizza {}
-class ClamPizza extends Pizza {}
-class VeggiePizza extends Pizza {}
+class CheesePizza extends Pizza {
+    @Override
+    public void prepare() {
+
+    }
+}
+class PepperoniPizza extends Pizza {
+    @Override
+    public void prepare() {
+
+    }
+}
+class ClamPizza extends Pizza {
+    @Override
+    public void prepare() {
+
+    }
+}
+class VeggiePizza extends Pizza {
+    @Override
+    public void prepare() {
+
+    }
+}

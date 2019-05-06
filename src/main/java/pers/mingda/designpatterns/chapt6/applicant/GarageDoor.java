@@ -1,6 +1,8 @@
 package pers.mingda.designpatterns.chapt6.applicant;
 
 public class GarageDoor {
+    public GarageDoor() {}
+    public GarageDoor(String action) {}
     public void up() { System.out.println("Garage door is up"); }
     public void down() { System.out.println("Garage door is down"); }
     public void stop() { System.out.println("Garage door is stop"); }

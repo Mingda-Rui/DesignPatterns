@@ -15,7 +15,7 @@ public class CheesePizza extends Pizza {
         this.ingredientFactory = ingredientFactory;    
     }    
 
-    void prepare() {
+    public void prepare() {
         // The prepare() method steps through creating
         // a cheese pizza, and each time it needs an
         // ingredient, it asks the factory to produce it    

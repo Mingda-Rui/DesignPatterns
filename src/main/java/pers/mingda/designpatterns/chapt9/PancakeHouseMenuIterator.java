@@ -11,7 +11,9 @@ class PancakeHouseMenuIterator implements Iterator {
     }
 
     public boolean hasNext() {
-        return menuItems.get(position) != null;
+        if (position < menuItems.size())
+            return menuItems.get(position) != null;
+        else return false;
     }
 
     public Object next() {

@@ -1,5 +1,8 @@
 package pers.mingda.designpatterns.chapt4;
 
+import pers.mingda.designpatterns.chapt4.pizzastore.*;
+import pers.mingda.designpatterns.chapt4.pizza.*;
+
 public class PizzaTestDrive {
 
     public static void main(String[] args) {

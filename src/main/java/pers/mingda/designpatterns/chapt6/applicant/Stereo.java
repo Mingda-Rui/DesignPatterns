@@ -1,6 +1,8 @@
 package pers.mingda.designpatterns.chapt6.applicant;
 
 public class Stereo {
+    public Stereo() {}
+    public Stereo(String action) {}
     public void on() { System.out.println("The stereo is on"); }
     public void off() { System.out.println("The stereo is off"); }
     public void setCd() { System.out.println("Set the CD for stereo"); }

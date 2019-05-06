@@ -7,16 +7,19 @@ import pers.mingda.designpatterns.chapt4.pizza.ingredient.*;
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     
     public Dough createDough() {
-        return new ThinCrustDough();    
+//        return new ThinCrustDough();
+        return new Dough() {};
     }
 
     public Sauce createSauce() {
-        return new MarinaraSauce();    
+//        return new MarinaraSauce();
+        return new Sauce() {};
     }
 
     public Cheese createCheese() {
-        return new ReggianoCheese();    
-    }    
+//        return new ReggianoCheese();
+        return new Cheese() {};
+    }
 
     public Veggies[] createVeggies() {
         // For veggies, we return an array of 
@@ -25,7 +28,8 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
         // sophisticated, but that doesn't really
         // add anything to learning the factory
         // pattern, so we'll keep it simple.    
-        Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+//        Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+        Veggies veggies[] = new Veggies[0];
         return veggies;
     }
 
@@ -36,14 +40,16 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
         // use it on the next page when
         // you get to implement the 
         // Chicago factory yourself    
-        return new SlicedPepperoni();    
+//        return new SlicedPepperoni();
+        return new Pepperoni() {};
     }    
 
     public Clams createClam() {
         // New York is on the coast; it
         // getes fresh clams. Chicago has
         // to settle for frozen.
-        return new FreshClams();    
+//        return new FreshClams();
+        return new Clams() {};
     }    
 
 }

@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt4.pizzastore;
 
+import pers.mingda.designpatterns.chapt4.factory.*;
 import pers.mingda.designpatterns.chapt4.pizza.*;
 
 public class NYPizzaStore extends PizzaStore {
@@ -21,8 +22,8 @@ public class NYPizzaStore extends PizzaStore {
 
         } else if (item.equals("veggie")) {
             
-            pizza = new VeggiePizza(ingredientFactory);
-            pizza.setNmae("New York Style Veggie Pizza");
+//            pizza = new VeggiePizza(ingredientFactory);
+//            pizza.setNmae("New York Style Veggie Pizza");
 
         } else if (item.equals("clam")) {
             
@@ -30,8 +31,8 @@ public class NYPizzaStore extends PizzaStore {
             pizza.setName("New York Style Clam Pizza");
 
         } else if (item.equals("pepperoni")) {
-            pizza = new PepperoniPizza(ingredientFactory);
-            pizza.setNmae("New York Sytle Pepperoni Pizza");
+//            pizza = new PepperoniPizza(ingredientFactory);
+//            pizza.setNmae("New York Sytle Pepperoni Pizza");
 
         }
         return pizza;

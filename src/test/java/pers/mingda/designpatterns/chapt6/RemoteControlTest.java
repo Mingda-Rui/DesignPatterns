@@ -1,5 +1,7 @@
 package pers.mingda.designpatterns.chapt6;
 
+import pers.mingda.designpatterns.chapt6.control.*;
+import pers.mingda.designpatterns.chapt6.command.*;
 import pers.mingda.designpatterns.chapt6.applicant.*;
 
 // This is our Client in Command Pattern-speak

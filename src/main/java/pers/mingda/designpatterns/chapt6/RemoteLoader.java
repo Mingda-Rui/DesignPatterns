@@ -26,18 +26,18 @@ public class RemoteLoader {
 
         // Create the On and Off
         // for the ceiling fan.
-        CeillingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
-        CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+//        CeillingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+//        CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
 
         // Create the Up and Down
         // commands for the Garage
-        GarageDorrUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
-        GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
+//        GarageDorrUpCommand garageDoorUp = new GarageDoorUpCommand(garageDoor);
+//        GarageDoorDownCommand garageDoorDown = new GarageDoorDownCommand(garageDoor);
 
         // Crate the stereo On
         // and Off commands
         StereoOnWithCDCommand stereoOnWithCD = new StereoOnWithCDCommand(stereo);
-        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
+//        StereoOffCommand stereoOff = new StereoOffCommand(stereo);
 
         // Now that we've got
         // all our commands, we 
@@ -45,8 +45,8 @@ public class RemoteLoader {
         // the remote slots
         remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
         remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
-        remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
-        remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
+//        remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
+//        remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
 
         // Here's where we use our toString()
         // method to print each remtoe slot and
