@@ -1,42 +1,29 @@
 package pers.mingda.designpatterns.chapt9;
 
 import java.util.Iterator;
+import java.util.ArrayList;
 
 public class Waitress {
-    Menu pancakeHouseMenu;
-    Menu dinerMenu;
-    Menu cafeMenu;
+    // Now we just take an
+    // ArrayList of menus.
+    ArrayList<Menu> menus;
     
 
     // In the constructor the Waitres
     // takes the two menus.
-    public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
+    public Waitress(ArrayList<Menu> menus) {
+        this.menus = menus;
     }
 
-    // The printMenu() method now creates two
-    // iterators, one for each menu.
+    // And we iterate through the menus,
+    // passing each menu's iterator to 
+    // the overloaded printMenu() method.
     public void printMenu() {
-        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
-        // And then calls the
-        // overloaded printMenu()
-        // with each iterator.
-        System.out.println("MENU\n----\nBREAKFAST");
-        printMenu(pancakeIterator);
-        System.out.println("\nLUNCH");
-        printMenu(dinerIterator);
-        // We're using the Cafe's 
-        // menu for our dinner menu.
-        // All we have to do to print
-        // it is create the iterator,
-        // and pass it to printMenu().
-        // That's it!
-        System.out.println("\nDINNER");
-        printMenu(cafeIterator);
+        Iterator<Menu> menuIterator = menus.iterator();
+        while (menuIterator.hasNext()) {
+            Menu menu = (Menu)menuIterator.next();
+            printMenu(menu.createIterator());
+        }   
     }
 
     private void printMenu(Iterator<MenuItem> iterator) {
