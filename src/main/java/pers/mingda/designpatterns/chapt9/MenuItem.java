@@ -1,15 +1,18 @@
 package pers.mingda.designpatterns.chapt9;
 
-public class MenuItem {
+// First we need to extend
+// the MenuComponent interface.
+public class MenuItem extends MenuComponent {
     String name;
     String description;
     boolean vegetarian;
     double price;
 
-    // A MenuItem consists of a name, a description,
-    // a flag to indicate if the item is vegetarian,
-    // and a price. You pass all these values into the 
-    // constructor to initialize the MenuItem.
+    // The constructor just takes
+    // the name, description, etc. and
+    // keeps a reference to them all.
+    // This is pretty much like our old
+    // menu item implementation.
     public MenuItem(String name, 
                     String description, 
                     boolean vegetarian, 
@@ -21,9 +24,8 @@ public class MenuItem {
         this.price = price;
     }
 
-    // These getter methods
-    // let you access the fields
-    // of the menu item.
+    // Here's our getter methods - just
+    // like our previous implementation.
     public String getName() {
         return name;
     }
@@ -38,6 +40,20 @@ public class MenuItem {
 
     public boolean isVegetarian() {
         return vegetarian;
+    }
+
+    // This is different from the previous implementation.
+    // Here we're overriding the print() method in the
+    // MenuComponent class. For MenuItem this method
+    // prints the complete menu entry: name, description,
+    // price and whether or not it's veggie.
+    public void print() {
+        System.out.print(" " + getName());
+        if (isVegetarian()) {
+            System.out.print("(v)");
+        }
+        System.out.println(", " + getPrice());
+        System.out.println("    -- " + getDescription());
     }
 
 }
