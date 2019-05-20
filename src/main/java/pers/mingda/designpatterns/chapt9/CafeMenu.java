@@ -1,7 +1,6 @@
 package pers.mingda.designpatterns.chapt9;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Iterator;
 
 // CafeMenu implements the Menu
