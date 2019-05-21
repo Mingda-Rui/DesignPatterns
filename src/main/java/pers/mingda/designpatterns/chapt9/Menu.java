@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
 import java.util.ArrayList;
 
 // Menu is also a MenuComponent,
@@ -8,7 +9,7 @@ public class Menu extends MenuComponent {
     // Menu can have any number of childern
     // of type MenuComponent, we'll use an
     // internal ArrayList to hold these.
-    ArrayList menuComponents = new ArrayList();
+    ArrayList<MenuComponent> menuComponents = new ArrayList<>();
     String name;
     String description;
 
@@ -57,8 +58,18 @@ public class Menu extends MenuComponent {
     public void print() {
         System.out.print("\n" + getName());
         System.out.println(", " + getDescription());
-        // To print the Menu, we print the 
-        // Menu's name and description.
         System.out.println("---------------------");
+
+        // Look! We get to use an Iterator. We
+        // use it to iterate through all the Menu's 
+        // components... those could be other Menus,
+        // or they could be MenuItems. Since both
+        // Menus and MenuItems implement print(), we 
+        // just call print() and the rest is up to them.
+        Iterator<MenuComponent> iterator = menuComponents.iterator();
+        while (iterator.hasNext()) {
+            MenuComponent menuComponent = (MenuComponent) iterator.next();
+            menuComponent.print();
+        }
     }
 }
