@@ -12,6 +12,7 @@ public class Menu extends MenuComponent {
     ArrayList<MenuComponent> menuComponents = new ArrayList<>();
     String name;
     String description;
+    // We only need one iterator per Menu.
     Iterator<MenuComponent> iterator = null;
 
     // This is different than our old implementation:
@@ -72,5 +73,14 @@ public class Menu extends MenuComponent {
             MenuComponent menuComponent = (MenuComponent) iterator.next();
             menuComponent.print();
         }
+    }
+
+    @Override
+    public Iterator<MenuComponent> createIterator() {
+        if (iterator == null) {
+            // We pass it the current composite's iterator.
+            iterator = new CompositeIterator(menuComponents.iterator());
+        }
+        return iterator;
     }
 }

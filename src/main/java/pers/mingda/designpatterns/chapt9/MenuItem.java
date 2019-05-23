@@ -1,5 +1,7 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
+
 // First we need to extend
 // the MenuComponent interface.
 public class MenuItem extends MenuComponent {
@@ -56,7 +58,8 @@ public class MenuItem extends MenuComponent {
         System.out.println("    -- " + getDescription());
     }
 
-    public Iterator createIterator() {
+    @Override
+    public Iterator<MenuComponent> createIterator() {
         return new NullIterator();
     }
 
