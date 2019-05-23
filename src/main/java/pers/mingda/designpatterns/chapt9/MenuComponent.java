@@ -45,4 +45,6 @@ public abstract class MenuComponent {
         throw new UnsupportedOperationException();
     }
 
+    abstract public Iterator createIterator();
+
 }
