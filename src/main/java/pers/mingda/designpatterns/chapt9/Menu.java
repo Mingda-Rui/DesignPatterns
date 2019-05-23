@@ -12,6 +12,7 @@ public class Menu extends MenuComponent {
     ArrayList<MenuComponent> menuComponents = new ArrayList<>();
     String name;
     String description;
+    Iterator<MenuComponent> iterator = null;
 
     // This is different than our old implementation:
     // we're going to give each Menu a name and a 
