@@ -3,7 +3,7 @@ package pers.mingda.designpatterns.chapt9;
 import java.util.Iterator;
 
 // And here's Mel's implementation of the Diner menu
-public class DinerMenu implements Menu {
+public class DinerMenu extends Menu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     // Mel takes a different approach; he's using an Array so he
@@ -11,19 +11,23 @@ public class DinerMenu implements Menu {
     // items out without having to cast his objects.
     MenuItem[] menuItems;
 
-    public DinerMenu() {
-        menuItems = new MenuItem[MAX_ITEMS]; 
+    // public DinerMenu() {
+    //     menuItems = new MenuItem[MAX_ITEMS]; 
 
-        addItem("Vegetarian BLT",
-            "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
-        addItem("BLT",
-            "Bacon with lettuce & tomato on whole wheat", false, 2.99);
-        addItem("Soup of the day", 
-            "Soup of the day, with a side of potato salas", false, 3.29);
-        addItem("Hotdog",
-            "A hot dog, with saurkraut, relish, onions, topped with cheese",
-            false, 3.05);
-        // a couple of other Diner Menu items added here
+    //     addItem("Vegetarian BLT",
+    //         "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
+    //     addItem("BLT",
+    //         "Bacon with lettuce & tomato on whole wheat", false, 2.99);
+    //     addItem("Soup of the day", 
+    //         "Soup of the day, with a side of potato salas", false, 3.29);
+    //     addItem("Hotdog",
+    //         "A hot dog, with saurkraut, relish, onions, topped with cheese",
+    //         false, 3.05);
+    //     // a couple of other Diner Menu items added here
+    // }
+
+    public DinerMenu(String name, String description) {
+        super(name, description);
     }
 
     // addItem() takes all the parameters 
