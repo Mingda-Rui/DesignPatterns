@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt9;
 
+import java.util.Iterator;
 // MenuComponent provides default
 // implementations for every method.
 public abstract class MenuComponent {
@@ -45,6 +46,6 @@ public abstract class MenuComponent {
         throw new UnsupportedOperationException();
     }
 
-    abstract public Iterator createIterator();
+    abstract public Iterator<MenuComponent> createIterator();
 
 }
