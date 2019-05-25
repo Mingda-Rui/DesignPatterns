@@ -1,7 +1,6 @@
 package pers.mingda.designpatterns.chapt9;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 // CafeMenu implements the Menu
 // interface, so the Waitress can use
@@ -32,16 +31,4 @@ public class CafeMenu extends Menu {
         menuItems.put(menuItem.getName(), menuItem);
     }
 
-    // Just like before, we can get rid of getItems() so we don't
-    // expose the implementation of menuItems to the Waitress.
-    // public HashMap<String, MenuItem> getItems() {
-    //     return menuItems;
-    // }
-
-    // And here's where we implement the createIterator()
-    // method. Notice that we're not getting an Iterator
-    // for the whole HashMap, just for the values.
-    public Iterator<MenuItem> createIterator() {
-        return menuItems.values().iterator();
-    }
 }

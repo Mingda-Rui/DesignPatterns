@@ -1,7 +1,5 @@
 package pers.mingda.designpatterns.chapt9;
 
-import java.util.Iterator;
-
 // And here's Mel's implementation of the Diner menu
 public class DinerMenu extends Menu {
     static final int MAX_ITEMS = 6;
@@ -46,29 +44,5 @@ public class DinerMenu extends Menu {
             numberOfItems = numberOfItems + 1;
         }
     }
-
-    // We're not going to need the getMenuItems() 
-    // method anymore and in fact, we don't want it
-    // because it exposes our internal implementation!
-    // public MenuItem[] getMenuItems() {
-    //     return menuItems;
-    // }
-
-    // Here's the createIterator() method.
-    // It creates a DinerMenuIterator
-    // from the menuItems array and
-    // returns it to the client.
-    public Iterator<MenuItem> createIterator() {
-        return new DinerMenuIterator(menuItems);
-    }
-    // We're returning the Iterator interface. The client
-    // doesn't need to konw how the menuItems are maintained
-    // in the DinerMenu, nor does it need to know how the 
-    // DinerMenuIterator is implemented. It just needs to ues the
-    // iterators to step through the items in the menu.
-
-    // other menu methods here 
-    // Like Lou, Mel has a bunch of code that depends on the implementation of 
-    // his menu being an Array. He's too busy cooking to rewrite all of this.
 
 }

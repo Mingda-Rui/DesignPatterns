@@ -1,6 +1,5 @@
 package pers.mingda.designpatterns.chapt9;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 
 public class PancakeHouseMenu extends Menu {
@@ -47,20 +46,5 @@ public class PancakeHouseMenu extends Menu {
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         menuItems.add(menuItem);
     }
-
-    // public ArrayList<MenuItem> getMenuItems() {
-    //     // The getMenuItems() method returns the list of memu items
-    //     return menuItems;
-    // }
-
-    public Iterator<MenuItem> createIterator() {
-        // return new PancakeHouseMenuIterator(menuItems);
-        return menuItems.iterator();
-    }
-
-    // other menu methods here
-    // Lou has a bunch of other menu code that depends
-    // on the ArrayList implementation. He doesn't want
-    // to have to rewrite all that code!
 
 }
