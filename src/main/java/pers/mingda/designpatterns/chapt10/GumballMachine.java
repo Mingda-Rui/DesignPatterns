@@ -78,5 +78,23 @@ public class GumballMachine {
     // More methods here including getters for each State...
     // This includes methods like getNoQuarterState() for getting each
     // state object, and getCount() for getting the gumball count.
+    State getNoQuarterState() {
+        return noQuarterState;
+    }
 
+    State getSoldOutState() {
+        return soldOutState;
+    }
+
+    State gethasQuarterState() {
+        return hasQuarterState;
+    }
+
+    State getSoldState() {
+        return soldState;
+    }
+
+    int getCount() {
+        return count;
+    }
 }
