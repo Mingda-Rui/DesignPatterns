@@ -39,4 +39,9 @@ public class NoQuarterState implements State {
     public void dispense() {
         System.out.println("You need to pay first");
     } 
+
+    public void refill(int gumballNumbers) {
+        int currentCount = gumballMachine.getCount();
+        gumballMachine.setCount(currentCount + gumballNumbers);
+    }
 }
