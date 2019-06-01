@@ -7,6 +7,10 @@ public class GumballMachine {
     State noQuarterState;
     State hasQuarterState;
     State soldState;
+    // All you need to add here is the
+    // new WinnerState and initialize 
+    // it in the constructor.
+    State winnerState;
 
     // ... and the State instance variable.
     State state = soldOutState;
@@ -19,20 +23,21 @@ public class GumballMachine {
     // our constructor takes the    
     // inital number of gumballs and 
     // store it in an instance variable.
-    public GumballMachine(int count) {
+    public GumballMachine(int numberGumballs) {
         // It also creates the State
         // instances, one of each.
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
+        winnerState = new WinnerState(this);
         this.count = numberGumballs;
         if (numberGumballs > 0) {
             // If there are more than 0 
             // gumballs we set the state to the 
             // NoQuarterState.
             state = noQuarterState;
-        }
+        } // else soldOutState
     }
 
     // Now for the actions. There are 
@@ -92,6 +97,10 @@ public class GumballMachine {
 
     State getSoldState() {
         return soldState;
+    }
+
+    State getWinnerState() {
+        return winnerState;
     }
 
     int getCount() {
