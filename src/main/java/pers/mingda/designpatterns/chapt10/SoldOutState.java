@@ -8,9 +8,7 @@ public class SoldOutState implements State {
     }
 
     public void insertQuarter() {
-        State newState = gumballMachine.gethasQuarterState();
-        gumballMachine.setState(newState);
-        System.out.println("Quarter Inserted!");
+        System.out.println("No Gumball Left, Ejecting the Quarter Automatically!");
     }
 
     public void ejectQuarter() {
