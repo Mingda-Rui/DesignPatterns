@@ -136,6 +136,10 @@ public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMa
         return this.location;
     }
 
+    public State getState() {
+        return this.state;
+    }
+
     void setCount(int gumballNumbers) {
         this.count = gumballNumbers;
     }
