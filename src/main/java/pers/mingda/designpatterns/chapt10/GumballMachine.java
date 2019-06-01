@@ -63,6 +63,10 @@ public class GumballMachine {
         state.dispense();
     }
 
+    public void refill(int gumballNumbers) {
+        state.refill(gumballNumbers);
+    }
+
     // This method allows other objects (like
     // our State objects) to transition the 
     // machine to a different state.
@@ -91,7 +95,7 @@ public class GumballMachine {
         return soldOutState;
     }
 
-    State gethasQuarterState() {
+    State getHasQuarterState() {
         return hasQuarterState;
     }
 
@@ -105,5 +109,9 @@ public class GumballMachine {
 
     int getCount() {
         return count;
+    }
+
+    void setCount(int gumballNumbers) {
+        this.count = gumballNumbers;
     }
 }
