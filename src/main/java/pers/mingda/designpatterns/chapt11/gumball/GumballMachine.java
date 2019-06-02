@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt11;
+package pers.mingda.designpatterns.chapt11.gumball;
 
 import pers.mingda.designpatterns.chapt10.State;
 import pers.mingda.designpatterns.chapt10.HasQuarterState;

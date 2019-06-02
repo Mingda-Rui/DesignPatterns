@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt11;
+package pers.mingda.designpatterns.chapt11.gumball;
 
 // Don't forget to import java.rmi.*;
 import java.rmi.Remote;

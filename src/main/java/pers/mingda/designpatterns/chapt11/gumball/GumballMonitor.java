@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt11;
+package pers.mingda.designpatterns.chapt11.gumball;
 
 // We need to import the RMI package because we are
 // using the RemoteException class below...
