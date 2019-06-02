@@ -1,7 +1,9 @@
 package pers.mingda.designpatterns.chapt10;
 
+import java.rmi.RemoteException;
+
 public class GumballMachineTestDrive {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         // Load it up with
         // five gumballs total.
         GumballMachine gumballMachine = new GumballMachine(5);
