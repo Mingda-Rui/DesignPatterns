@@ -7,7 +7,14 @@ public class HasQuarterState implements State {
     // generator to generate the 
     // 10% chance of winning...
     Random randomWinner = new Random(System.currentTimeMillis());
-    GumballMachine gumballMachine;
+    // In each implementation of State, we 
+    // add the transient keyword to the 
+    // GumballMachine instance variable. This  
+    // tells the JVM not to serialize this field.
+    // Note that this can be slightly dangerous
+    // if you try to access this field once its
+    // been serialized and transferred.
+    transient GumballMachine gumballMachine;
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

@@ -2,7 +2,7 @@ package pers.mingda.designpatterns.chapt10;
 
 // First we need to implement the State interface.
 public class NoQuarterState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
 
     // We get passed a reference to
     // the Gumball Machine through the 

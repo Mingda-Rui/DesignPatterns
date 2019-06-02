@@ -1,6 +1,13 @@
 package pers.mingda.designpatterns.chapt10;
 
-public interface State {
+// Serializeable is in the java.io package.
+import java.io.Serializable;
+
+// Then we just extend the Serializable
+// interface (which has no mehods in it).
+// And now State in all the subclasses can 
+// be transferred over the network.
+public interface State extends Serializable {
 
     public void insertQuarter();
     public void ejectQuarter();
