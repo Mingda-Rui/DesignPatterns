@@ -7,7 +7,12 @@ import pers.mingda.designpatterns.chapt10.State;
 
 // This is the remote interface.
 public interface GumballMachineRemote extends Remote {
+    // All return types need 
+    // to be primitive or
+    // Serializable...
     public int getCount() throws RemoteException;
     public String getLocation() throws RemoteException;
     public State getStete() throws RemoteException;
+    // Here are the methods were going to support.
+    // Each one throws RemoteException.
 }
