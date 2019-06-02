@@ -1,6 +1,11 @@
 package pers.mingda.designpatterns.chapt10;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+// GumballMachine is going to subclass the UnicastRemoteObject;
+// this gives it the ability to act as a remote service.
+public class GumballMachine extends UnicastRemoteObject{
 
     // Here are all the States again...
     State soldOutState;
@@ -23,7 +28,7 @@ public class GumballMachine {
     // our constructor takes the    
     // inital number of gumballs and 
     // store it in an instance variable.
-    public GumballMachine(int numberGumballs) {
+    public GumballMachine(int numberGumballs) throws RemoteException {
         // It also creates the State
         // instances, one of each.
         soldOutState = new SoldOutState(this);

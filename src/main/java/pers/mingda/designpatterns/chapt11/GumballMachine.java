@@ -6,8 +6,12 @@ import pers.mingda.designpatterns.chapt10.NoQuarterState;
 import pers.mingda.designpatterns.chapt10.SoldOutState;
 import pers.mingda.designpatterns.chapt10.SoldState;
 import pers.mingda.designpatterns.chapt10.WinnerState;
+// First, we need to import the rmi packages.
+import java.rmi.RemoteException;
 
-public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMachine {
+// GumballMachine also needs to implement the remote interface...
+public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMachine 
+        implements GumballMachineRemote {
 
     // Here are all the States again...
     State soldOutState;
@@ -33,7 +37,7 @@ public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMa
     // our constructor takes the    
     // inital number of gumballs and 
     // store it in an instance variable.
-    public GumballMachine(int numberGumballs) {
+    public GumballMachine(int numberGumballs) throws RemoteException {
         super(numberGumballs);
         // It also creates the State
         // instances, one of each.
@@ -54,7 +58,7 @@ public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMa
     // The location is passed into the
     // constructor and stored in the 
     // instance variable.
-    public GumballMachine(String location, int count) {         
+    public GumballMachine(String location, int count) throws RemoteException {         
         this(count);
         this.location = location;
     }
