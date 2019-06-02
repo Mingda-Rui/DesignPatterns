@@ -12,7 +12,7 @@ public interface GumballMachineRemote extends Remote {
     // Serializable...
     public int getCount() throws RemoteException;
     public String getLocation() throws RemoteException;
-    public State getStete() throws RemoteException;
+    public State getState() throws RemoteException;
     // Here are the methods were going to support.
     // Each one throws RemoteException.
 }
