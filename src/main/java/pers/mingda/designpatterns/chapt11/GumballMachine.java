@@ -130,7 +130,7 @@ public class GumballMachine extends pers.mingda.designpatterns.chapt10.GumballMa
         return winnerState;
     }
 
-    int getCount() {
+    public int getCount() {
         return count;
     }
 
