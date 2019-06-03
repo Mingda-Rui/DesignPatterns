@@ -1,6 +1,8 @@
 package pers.mingda.designpatterns.chapt11;
 
 import java.rmi.Naming;
+import pers.mingda.designpatterns.chapt11.gumball.GumballMonitor;
+import pers.mingda.designpatterns.chapt11.gumball.GumballMachineRemote;
 
 public class GumballMonitorTestDrive {
 
