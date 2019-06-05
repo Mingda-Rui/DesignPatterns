@@ -2,6 +2,7 @@ package pers.mingda.designpatterns.chapt11;
 
 import java.lang.reflect.Proxy;
 import pers.mingda.designpatterns.chapt11.matchmaking.PersonBean;
+import pers.mingda.designpatterns.chapt11.matchmaking.PersonBeanImpl;
 import pers.mingda.designpatterns.chapt11.matchmaking.NonOwnerInvocationHandler;
 import pers.mingda.designpatterns.chapt11.matchmaking.OwnerInvocationHandler;
 
@@ -27,7 +28,7 @@ public class MatchMakingTestDrive {
         // Let's retieve a person from the DB
         PersonBean joe = getPersonFromDatabase("Joe Javabean");
         // ...and create an owner proxy.
-        PersonBean ownerProxy = getOwnerproxy(joe);
+        PersonBean ownerProxy = getOwnerProxy(joe);
         // Call a getter
         System.out.println("Name is " + ownerProxy.getName());
         // and then a setter
@@ -67,6 +68,14 @@ public class MatchMakingTestDrive {
 
     //TODO finish the method
     private PersonBean getPersonFromDatabase(String name) {
+        // return PersonBean
+        if (name.equals("joe")) {
+            PersonBean joe = new PersonBeanImpl();
+            joe.setName("Joe");
+            joe.setGender("Male");
+            joe.setInterests("Gaming");
+            return joe;
+        }
         return null;
     }
 
