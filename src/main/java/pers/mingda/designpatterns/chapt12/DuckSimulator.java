@@ -11,16 +11,16 @@ public class DuckSimulator {
     }
 
     void simulate() {
-        // We need some ducks, so
-        // her ewe create one of 
-        // each Quackable...
-        Quackable mallardDuck = new MallardDuck();
-        Quackable redheadDuck = new RedheadDuck();
-        Quackable duckCall = new DuckCall();
-        Quackable rubberDuck = new RubberDuck();
-        // We make a Goose that acts like
-        // a Duck by wrapping the Goose
-        // in the GooseAdapter.
+        // Each time we create a 
+        // Quackable, we wrap it
+        // with a new decorator.
+        Quackable mallardDuck = new QuackCounter(new MallardDuck());
+        Quackable redheadDuck = new QuackCounter(new RedheadDuck());
+        Quackable duckCall = new QuackCounter(new DuckCall());
+        Quackable rubberDuck = new QuackCounter(new RubberDuck());
+        // The park ranger told us he didn't 
+        // want to count geese honks, so we 
+        // don't decorate it.
         Quackable gooseDuck = new GooseAdapter(new Goose());
 
         System.out.println("\nDuck Simulator");
@@ -33,6 +33,9 @@ public class DuckSimulator {
         // Once the Goose is wrapped, we can treat
         // it just like other duck Quackables.
         simulate(gooseDuck);
+
+        // Here's where we gather the quacking behavior for the Quackologists.
+        System.out.println("The ducks quacked " + QuackCounter.getQuack() + " times");
     }
 
     // Here we overload the simulate
