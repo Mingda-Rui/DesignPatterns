@@ -18,6 +18,10 @@ public class DuckSimulator {
         Quackable redheadDuck = new RedheadDuck();
         Quackable duckCall = new DuckCall();
         Quackable rubberDuck = new RubberDuck();
+        // We make a Goose that acts like
+        // a Duck by wrapping the Goose
+        // in the GooseAdapter.
+        Quackable gooseDuck = new GooseAdapter(new Goose());
 
         System.out.println("\nDuck Simulator");
 
@@ -26,6 +30,9 @@ public class DuckSimulator {
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
+        // Once the Goose is wrapped, we can treat
+        // it just like other duck Quackables.
+        simulate(gooseDuck);
     }
 
     // Here we overload the simulate
