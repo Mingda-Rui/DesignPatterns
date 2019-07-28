@@ -24,34 +24,15 @@ public class DuckSimulator {
         Quackable rubberDuck = duckFactory.createRubberDuck();
         Quackable gooseDuck = new GooseAdapter(new Goose());
 
-    }
+        System.out.println("\nDuck Simulator: With Abstract Factory");
 
-    void simulate() {
-        // Each time we create a 
-        // Quackable, we wrap it
-        // with a new decorator.
-        Quackable mallardDuck = new QuackCounter(new MallardDuck());
-        Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-        Quackable duckCall = new QuackCounter(new DuckCall());
-        Quackable rubberDuck = new QuackCounter(new RubberDuck());
-        // The park ranger told us he didn't 
-        // want to count geese honks, so we 
-        // don't decorate it.
-        Quackable gooseDuck = new GooseAdapter(new Goose());
-
-        System.out.println("\nDuck Simulator");
-
-        // ... then we simulate each one.
         simulate(mallardDuck);
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
-        // Once the Goose is wrapped, we can treat
-        // it just like other duck Quackables.
         simulate(gooseDuck);
 
-        // Here's where we gather the quacking behavior for the Quackologists.
-        System.out.println("The ducks quacked " + QuackCounter.getQuack() + " times");
+        System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times");
     }
 
     // Here we overload the simulate
