@@ -28,7 +28,7 @@ public class QuackCounter implements Quackable {
         numberOfQuacks++;
     }
 
-    public static int getQuack() {
+    public static int getQuacks() {
         // We're adding one other method
         // to the decorator. This static
         // method just returns the number

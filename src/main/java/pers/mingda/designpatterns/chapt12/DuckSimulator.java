@@ -7,7 +7,23 @@ public class DuckSimulator {
         // We create a simulator and then 
         // call its simulate() method.
         DuckSimulator simulator = new DuckSimulator();
-        simulator.simulate();
+        // First we create the factory that we're going
+        // to pass into the simulate() method.
+        AbstractDuckFactory duckFactory = new CountingDuckFactory();
+
+        simulator.simulate(duckFactory);
+    }
+
+    // The simulate() method takes an AbstractDuckFactory 
+    // and uses it to create ducks rather than instantiating
+    // them directly.
+    void simulate(AbstractDuckFactory duckFactory) {
+        Quackable mallardDuck = duckFactory.createMallardDuck();
+        Quackable redheadDuck = duckFactory.createRedheadDuck();
+        Quackable duckCall = duckFactory.createDuckCall();
+        Quackable rubberDuck = duckFactory.createRubberDuck();
+        Quackable gooseDuck = new GooseAdapter(new Goose());
+
     }
 
     void simulate() {
