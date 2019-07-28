@@ -11,6 +11,10 @@ public class GooseAdapter implements Quackable {
         this.goose = goose;
     }
 
+    public GooseAdapter() {
+        this.goose = new Goose();
+    }
+
     public void quack() {
         goose.honk();
     }

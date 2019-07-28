@@ -5,6 +5,7 @@ import pers.mingda.designpatterns.chapt12.duck.QuackCounter;
 import pers.mingda.designpatterns.chapt12.duck.MallardDuck;
 import pers.mingda.designpatterns.chapt12.duck.RedheadDuck;
 import pers.mingda.designpatterns.chapt12.duck.DuckCall;
+import pers.mingda.designpatterns.chapt12.duck.GooseAdapter;
 import pers.mingda.designpatterns.chapt12.duck.RubberDuck;
 
 // CountingDuckFactory also extends the abstract factory.
@@ -30,5 +31,9 @@ public class CountingDuckFactory extends AbstractDuckFactory {
 
     public Quackable createRubberDuck() {
         return new QuackCounter(new RubberDuck());
+    }
+
+    public Quackable createGooseDuck() {
+        return new QuackCounter(new GooseAdapter());
     }
 }

@@ -5,6 +5,7 @@ import pers.mingda.designpatterns.chapt12.duck.MallardDuck;
 import pers.mingda.designpatterns.chapt12.duck.RedheadDuck;
 import pers.mingda.designpatterns.chapt12.duck.DuckCall;
 import pers.mingda.designpatterns.chapt12.duck.RubberDuck;
+import pers.mingda.designpatterns.chapt12.duck.GooseAdapter;
 
 // DuckFactory extends the abstract factory.
 public class DuckFactory extends AbstractDuckFactory {
@@ -29,5 +30,9 @@ public class DuckFactory extends AbstractDuckFactory {
 
     public Quackable createRubberDuck() {
         return new RubberDuck();
+    }
+
+    public Quackable createGooseDuck() {
+        return new GooseAdapter();
     }
 }
