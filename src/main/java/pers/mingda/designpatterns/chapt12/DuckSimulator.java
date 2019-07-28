@@ -1,5 +1,8 @@
 package pers.mingda.designpatterns.chapt12;
 
+import pers.mingda.designpatterns.chapt12.duckfactory.AbstractDuckFactory;
+import pers.mingda.designpatterns.chapt12.duckfactory.CountingDuckFactory;
+
 // Here's our main method to
 // get everything going.
 public class DuckSimulator {
