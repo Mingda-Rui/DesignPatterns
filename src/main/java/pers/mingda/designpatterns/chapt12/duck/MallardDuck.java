@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duck;
 
 // Your standard Mallard duck.
 public class MallardDuck implements Quackable {

@@ -1,6 +1,6 @@
 package pers.mingda.designpatterns.chapt12.duckfactory;
 
-import pers.mingda.designpatterns.chapt12.Quackable;
+import pers.mingda.designpatterns.chapt12.duck.Quackable;
 
 // We're defining an abstract factory
 // that subclasses will implement to 

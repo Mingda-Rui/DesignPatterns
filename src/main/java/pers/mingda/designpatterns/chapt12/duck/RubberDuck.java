@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duck;
 
 public class RubberDuck implements Quackable {
     public void quack() {

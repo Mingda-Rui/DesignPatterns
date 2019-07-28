@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duck;
 
 // Remember, and Adapter implements the target interface,
 // which in this case is Quackable.

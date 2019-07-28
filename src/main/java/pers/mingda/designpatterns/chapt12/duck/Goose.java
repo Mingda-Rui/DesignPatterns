@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duck;
 
 public class Goose {
     public void honk() {

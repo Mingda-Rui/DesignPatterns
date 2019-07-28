@@ -1,4 +1,4 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duck;
 
 public interface Quackable {
     // Quackables only need to do

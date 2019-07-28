@@ -1,4 +1,11 @@
-package pers.mingda.designpatterns.chapt12;
+package pers.mingda.designpatterns.chapt12.duckfactory;
+
+import pers.mingda.designpatterns.chapt12.duck.Quackable;
+import pers.mingda.designpatterns.chapt12.duck.QuackCounter;
+import pers.mingda.designpatterns.chapt12.duck.MallardDuck;
+import pers.mingda.designpatterns.chapt12.duck.RedheadDuck;
+import pers.mingda.designpatterns.chapt12.duck.DuckCall;
+import pers.mingda.designpatterns.chapt12.duck.RubberDuck;
 
 // CountingDuckFactory also extends the abstract factory.
 public class CountingDuckFactory extends AbstractDuckFactory {
