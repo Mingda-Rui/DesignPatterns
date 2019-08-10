@@ -4,6 +4,7 @@ import pers.mingda.designpatterns.chapt12.duckfactory.AbstractDuckFactory;
 import pers.mingda.designpatterns.chapt12.duckfactory.CountingDuckFactory;
 import pers.mingda.designpatterns.chapt12.duck.Quackable;
 import pers.mingda.designpatterns.chapt12.duck.QuackCounter;
+import pers.mingda.designpatterns.chapt12.duck.Flock;
 
 // Here's our main method to
 // get everything going.
@@ -19,34 +20,60 @@ public class DuckSimulator {
         simulator.simulate(duckFactory);
     }
 
-    // The simulate() method takes an AbstractDuckFactory 
-    // and uses it to create ducks rather than instantiating
-    // them directly.
+    // Create all the Quackables, just like before.
     void simulate(AbstractDuckFactory duckFactory) {
-        Quackable mallardDuck = duckFactory.createMallardDuck();
+        // Quackable mallardDuck = duckFactory.createMallardDuck();
         Quackable redheadDuck = duckFactory.createRedheadDuck();
         Quackable duckCall = duckFactory.createDuckCall();
         Quackable rubberDuck = duckFactory.createRubberDuck();
         // Quackable gooseDuck = new GooseAdapter(new Goose());
         Quackable gooseDuck = duckFactory.createGooseDuck();
+        System.out.println("\nDuck Simulator: With Composite - Flocks");
 
-        System.out.println("\nDuck Simulator: With Abstract Factory");
+        // First we create a Flock, and 
+        // load it up with Quackables.
+        Flock flockOfDucks = new Flock();
 
-        simulate(mallardDuck);
-        simulate(redheadDuck);
-        simulate(duckCall);
-        simulate(rubberDuck);
-        simulate(gooseDuck);
+        flockOfDucks.add(redheadDuck);
+        flockOfDucks.add(duckCall);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(gooseDuck);
 
-        System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times");
+        // Then we create a new 
+        // Flock of Mallards
+        Flock flockOfMallards = new Flock();
+
+        // Here we're creating a 
+        // little family of mallards...
+        Quackable mallardOne = duckFactory.createMallardDuck();
+        Quackable mallardTwo = duckFactory.createMallardDuck();
+        Quackable mallardThree = duckFactory.createMallardDuck();
+        Quackable mallardFour = duckFactory.createMallardDuck();
+
+        // ..and adding them to the
+        // Flock of mallards.
+        flockOfMallards.add(mallardOne);
+        flockOfMallards.add(mallardTwo);
+        flockOfMallards.add(mallardThree);
+        flockOfMallards.add(mallardFour);
+
+        // Then we add the Flock of 
+        // mallards to the main flock.
+        flockOfDucks.add(flockOfMallards);
+        System.out.println("\nDuck Simulator: Whole Flock Simulation");
+        // Let's test out the entire Flock!
+        simulate(flockOfDucks);
+
+        System.out.println("\nDuck Simulator: Mallard Flock Simulation");
+        // Then let's just test out the mallard's Flock.
+        simulate(flockOfMallards);
+
+        // Finally, let's give the Quackologist the data.
+        System.out.println("\nThe ducks quacked " + QuackCounter.getQuacks() + " times");
     }
 
-    // Here we overload the simulate
-    // method to simulate just one duck.
     void simulate(Quackable duck) {
-        // Here we let polymorphism do its magic: no
-        // matter what kind of Quackable gets passed in,
-        // the simulate() method asks it to quack.
+        // Nothing needs to change here, a Flock is a Quackable!
         duck.quack();
     }
 }
