@@ -1,5 +1,6 @@
 package pers.mingda.designpatterns.chapt12.observer;
 
+import java.util.Observer;
 // QuackObervable is the interface
 // that Quackables should implement
 // if they want to be ovserved.
