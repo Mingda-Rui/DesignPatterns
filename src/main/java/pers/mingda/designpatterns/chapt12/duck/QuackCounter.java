@@ -1,5 +1,8 @@
 package pers.mingda.designpatterns.chapt12.duck;
 
+import pers.mingda.designpatterns.chapt12.observer.Observer;
+import pers.mingda.designpatterns.chapt12.observer.Observable;
+
 // QuackCounter is a decorator
 // Like with Adapter, we need to
 // implement the target interface.
@@ -13,11 +16,14 @@ public class QuackCounter implements Quackable {
     // variable to keep track.
     static int numberOfQuacks;
 
+    Observable observable;
+
     // We get the reference to the
     // Quackable we're decorating in 
     // the constructor.
     public QuackCounter (Quackable duck) {
         this.duck = duck;
+        this.observable = new Observable(duck);
     }
 
     public void quack() {
@@ -26,6 +32,8 @@ public class QuackCounter implements Quackable {
         duck.quack();
         // ... then we increase the number of quacks.
         numberOfQuacks++;
+
+        notifyObservers();
     }
 
     public static int getQuacks() {
@@ -36,4 +44,14 @@ public class QuackCounter implements Quackable {
         // in all Quackables.
         return numberOfQuacks;
     }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observable.registerObserver(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+		this.observable.notifyObservers();
+	}
 }
