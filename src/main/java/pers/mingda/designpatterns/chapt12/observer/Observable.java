@@ -26,6 +26,7 @@ public class Observable implements QuackObservable {
     }
 
     // And the code for doing the noifications.
+    
     public void notifyObservers() {
         Iterator<Observer> iterator = observers.iterator();
         while (iterator.hasNext()) {
