@@ -1,8 +1,6 @@
 package pers.mingda.designpatterns.chapt12.observer;
 
-import java.util.Observer;
-
-public interface MockObserver extends Observer {
+public interface Observer extends java.util.Observer {
 
     public void update(QuackObservable quackObservable);
 
