@@ -1,3 +1,3 @@
 package pers.mingda.designpatterns.chapt12.mvc.observer;
 
-public class BeatObserver { }
+public interface BeatObserver { }
