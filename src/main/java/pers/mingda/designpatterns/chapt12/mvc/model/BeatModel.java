@@ -16,8 +16,8 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 
     // These ArrayLists hold the two kinds of
     // obervers (Beat and BPM obervers).
-    ArrayList beatObervers = new ArrayList();
-    ArrayList bpmObservers = new ArrayList();
+    ArrayList<BeatObserver> beatObervers = new ArrayList<>();
+    ArrayList<BPMObserver> bpmObservers = new ArrayList<>();
     
     // The bpm instance variable holds the frequency
     // of beats - by default, 90 BPM.
