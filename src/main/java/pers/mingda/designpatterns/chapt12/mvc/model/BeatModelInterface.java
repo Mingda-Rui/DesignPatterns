@@ -40,7 +40,7 @@ public interface BeatModelInterface {
 
     void registerObserver(BPMObserver o);
 
-    void removeObserber(BPMObserver o);
+    void removeObserver(BPMObserver o);
 
     // This should look familar, these
     // methods allow objects to register

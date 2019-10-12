@@ -78,12 +78,6 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public int getBPM() {
         return this.bpm;
     }
-
-    @Override
-    public void removeObserber(BPMObserver o) {
-        // TODO Auto-generated method stub
-
-    }
 }
 
 
