@@ -1,6 +1,7 @@
 package pers.mingda.designpatterns.chapt12.mvc.adapter;
 
 import pers.mingda.designpatterns.chapt12.mvc.model.HeartModelInterface;
+import pers.mingda.designpatterns.chapt12.mvc.model.BeatModelInterface;
 import pers.mingda.designpatterns.chapt12.mvc.observer.BPMObserver;
 import pers.mingda.designpatterns.chapt12.mvc.observer.BeatObserver;
 
@@ -53,6 +54,4 @@ public class HeartAdapter implements BeatModelInterface {
     public void removeObserver(BPMObserver o) {
         heart.removeObserver(o);
     }
-
-
 }

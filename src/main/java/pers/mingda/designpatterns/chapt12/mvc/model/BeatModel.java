@@ -2,6 +2,7 @@ package pers.mingda.designpatterns.chapt12.mvc.model;
 
 import javax.sound.midi.MetaEventListener;
 import javax.sound.midi.Sequencer;
+import javax.sound.midi.MetaMessage;
 import java.util.ArrayList;
 
 import pers.mingda.designpatterns.chapt12.mvc.observer.BeatObserver;
@@ -52,12 +53,37 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public void setBPM(int bpm) {
         this.bpm = bpm;
         sequencer.setTempoInBPM(getBPM());
-        notifyBPMObervers();
+        notifyBPMObservers();
     }
 
     // Code to register and notify observers
+    public void registerObserver(BeatObserver o) { }
+
+    public void removeObserver(BeatObserver o) { }
+
+    public void registerObserver(BPMObserver o) { }
+
+    public void removeObserver(BPMObserver o) { }
+
+    public void notifyBPMObservers() { }
 
     // Lots of MIDI code to handle the beat
+    public void setUpMidi() { }
+
+    public void buildTrackAndStart() { }
+
+    public void meta(MetaMessage mm) { }
+
+    @Override
+    public int getBPM() {
+        return this.bpm;
+    }
+
+    @Override
+    public void removeObserber(BPMObserver o) {
+        // TODO Auto-generated method stub
+
+    }
 }
 
 

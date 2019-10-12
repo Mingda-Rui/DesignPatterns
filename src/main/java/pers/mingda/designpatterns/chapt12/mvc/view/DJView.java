@@ -26,7 +26,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     // Here, we create a few components for the display.
     JFrame viewFrame;
     JPanel viewPanel;
-    BeatBar beatBar;
+    // BeatBar beatBar;
     JLabel bpmOutputLabel;
 
     JLabel bpmLabel;
@@ -75,9 +75,9 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     // happens, we need to pulse our "beat bar". We
     // do this by setting it to its maximum value (100)
     // and letting it handle the animation of the pulse.
-    public void updateBeat() {
-        beatBar.setValue(100);
-    }
+    // public void updateBeat() {
+    //     beatBar.setValue(100);
+    // }
 
     // This method creates all the controls and places them in the
     // interface. It also takes care of the menu. When the stop
