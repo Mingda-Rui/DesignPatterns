@@ -12,6 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import pers.mingda.designpatterns.chapt12.mvc.model.BeatModelInterface;
 import pers.mingda.designpatterns.chapt12.mvc.controller.ControllerInterface;
+import pers.mingda.designpatterns.chapt12.mvc.observer.BPMObserver;
+import pers.mingda.designpatterns.chapt12.mvc.observer.BeatObserver;
 
 // DJView is an observer for both real-time beats and BPM changes.
 public class DJView implements ActionListener, BeatObserver, BPMObserver {

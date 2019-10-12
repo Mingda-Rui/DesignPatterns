@@ -4,6 +4,9 @@ import javax.sound.midi.MetaEventListener;
 import javax.sound.midi.Sequencer;
 import java.util.ArrayList;
 
+import pers.mingda.designpatterns.chapt12.mvc.observer.BeatObserver;
+import pers.mingda.designpatterns.chapt12.mvc.observer.BPMObserver;
+
 // We implement the BeatModelInterface
 public class BeatModel implements BeatModelInterface, MetaEventListener {
     // The sequencer is the object that knows how to

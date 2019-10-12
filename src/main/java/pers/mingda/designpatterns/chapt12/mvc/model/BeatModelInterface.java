@@ -1,5 +1,8 @@
 package pers.mingda.designpatterns.chapt12.mvc.model;
 
+import pers.mingda.designpatterns.chapt12.mvc.observer.BeatObserver;
+import pers.mingda.designpatterns.chapt12.mvc.observer.BPMObserver;
+
 public interface BeatModelInterface {
     // There are the methods
     // the controller will use to 
