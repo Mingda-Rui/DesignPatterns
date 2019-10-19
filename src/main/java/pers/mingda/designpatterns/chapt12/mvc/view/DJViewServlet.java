@@ -33,6 +33,68 @@ public class DJView extends HttpServlet {
     // happens. We've got its implementation on the next page.
     public void doGet(HttpServletRequest request, HttpServletResponse response) 
         throws IOException, ServletException{
-            // implementation here
+            // First we grab the model from
+            // the servlet context. We can't 
+            // manipulate the model without a
+            // reference to it.
+            BeatModel beatModel = (BeatModel) getServletContext().getAttribute("beatModel");
+
+            // Next we grab all the HTTP
+            // commands/parameters
+            String bpm = request.getParameter("bpm");
+            if (bpm == null) {
+                bpm = beatModel.getBPM() + "";
+            }
+
+            // If we get a set command, then
+            // we get the value of the set,
+            // and tell the model.
+            String set = request.getParameter("set");
+            if (set != null) {
+                int bpmNumber = 90;
+                bpmNumber = Integer.parseInt(bpm);
+                beatModel.setBPM(bpmNumber);
+            }
+
+            // To increase or decrease, we get the
+            // current BPMs from the model, and 
+            // agjust up or down by one.
+            String decrease = request.getParameter("decrease");
+            if (decrease != null) {
+                beatModel.setBPM(beatModel.getBPM() - 1);
+            }
+
+            String increase = request.getParameter("increase");
+            if (increase != null) {
+                beatModel.setBPM(beatModel.getBPM() + 1);
+            }
+
+            // If we get an on or off command, we 
+            // tell the model to start or stop.
+            String on = request.getParameter("on");
+            if (on != null) {
+                beatModel.start();
+            }
+
+            String off = request.getParameter("off");
+            if (off != null) {
+                beatModel.stop();
+            }
+
+            // Finally, our job as a controller
+            // is done. All we need to do is 
+            // ask the view to take over and 
+            // create an HTML view.
+
+            // Following the Model 2 definition, 
+            // we pass the JSP a bean with the 
+            // model state in it. In this case, we 
+            // pass it the actual model, since it
+            // happens to be a bean.
+            request.setAttribute("beatModel", beatModel);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/DJView.jsp");
+            dispatcher.forward(request, response);
+        
         }
 }
